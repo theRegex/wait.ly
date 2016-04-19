@@ -1,0 +1,52 @@
+{
+  "restaurants": [
+    {
+      "Mc-Donalds": {
+        "location": "",
+        "city": "Dallas",
+        "state": "Texas",
+        "est": ""
+      }
+    },
+    {
+      "Cheddars": {
+        "location": "",
+        "city": "Dallas",
+        "state": "Texas",
+        "est": ""
+      }
+    },
+    {
+      "Zennas": {
+        "location": "",
+        "city": "Dallas",
+        "state": "Texas",
+        "est": ""
+      }
+    },
+    {
+      "Cheesecake-factory": {
+        "location": "",
+        "city": "Dallas",
+        "state": "Texas",
+        "est": ""
+      }
+    },
+    {
+      "Red_lobster": {
+        "location": "",
+        "city": "Dallas",
+        "state": "Texas",
+        "est": ""
+      }
+    },
+    {
+      "Buffalo_Wild_Wings": {
+        "location": "",
+        "city": "Dallas",
+        "state": "Texas",
+        "est": ""
+      }
+    }
+  ]
+}
