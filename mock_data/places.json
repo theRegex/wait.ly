@@ -1,52 +1,52 @@
 {
   "restaurants": [
     {
-      "Mc-Donalds": {
+        "name": "McDonalds",
         "location": "",
         "city": "Dallas",
         "state": "Texas",
         "est": ""
-      }
+      
     },
     {
-      "Cheddars": {
+        "name": "McDonalds",
         "location": "",
         "city": "Dallas",
         "state": "Texas",
         "est": ""
-      }
+      
     },
     {
-      "Zennas": {
+        "name": "McDonalds",
         "location": "",
         "city": "Dallas",
         "state": "Texas",
         "est": ""
-      }
+      
     },
     {
-      "Cheesecake-factory": {
+       "name": "McDonalds",
         "location": "",
         "city": "Dallas",
         "state": "Texas",
         "est": ""
-      }
+      
     },
     {
-      "Red_lobster": {
+        "name": "McDonalds",
         "location": "",
         "city": "Dallas",
         "state": "Texas",
         "est": ""
-      }
+      
     },
     {
-      "Buffalo_Wild_Wings": {
+       "name": "McDonalds",
         "location": "",
         "city": "Dallas",
         "state": "Texas",
         "est": ""
-      }
+      
     }
   ]
 }
