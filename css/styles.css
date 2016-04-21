@@ -11,8 +11,8 @@ main{
 	box-sizing:border-box;
 	border: 1px solid #e7e7e7;
 	margin: 1% auto;
-	background-color: #333;
+	background-color: #e7e7e7;
 	overflow: hidden;
-	padding: 3%;
+	
 
 }

@@ -1,5 +1,5 @@
 waiter.config(function($stateProvider, $urlRouterProvider) {
-	 $urlRouterProvider.otherwise('/login');
+	 $urlRouterProvider.otherwise('/profile');
 	$stateProvider
 	.state('/login',{
 		url: "/login",
@@ -11,6 +11,12 @@ waiter.config(function($stateProvider, $urlRouterProvider) {
 		url: "/profile",
 		templateUrl : "/wait.ly/partials/profile.html",
 		controller : 'profile'
+		
+	})
+	.state('/search',{
+		url: "/search",
+		templateUrl : "/wait.ly/partials/search.html",
+		controller : 'search'
 		
 	})
 	
