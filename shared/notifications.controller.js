@@ -1,0 +1,3 @@
+waiter.controller('notify', function(){
+	
+})
