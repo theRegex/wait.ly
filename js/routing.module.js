@@ -19,6 +19,13 @@ waiter.config(function($stateProvider, $urlRouterProvider) {
 		controller : 'search'
 		
 	})
+
+	.state('/locationView',{
+		url: "/search",
+		templateUrl : "/wait.ly/partials/cache-view.html",
+		controller : 'cache'
+		
+	})
 	
  //last edits made here
 })

@@ -5,9 +5,13 @@
 		<li><a ui-sref="/profile">profile</a></li>
 	</ul>
 
-<input type="text" class="form-control" ng-model="search">
+<input type="text" class="form-control" ng-model="search" ng-change="getFoodLocations()">
 	<ul ng-repeat="x in places">
-   <li ng-repeat="a in x.restaurants | filter:search"  >{{a.name}}</li>	
+   <li ng-repeat="a in x.restaurants | filter:search"  ng-click="viewLocation(a)" class="list-item-1">
+<div class="list-name">{{a.name}}</div>
+<div class="list-city">{{a.city}}</div>
+</li>	
+
 </ul>
 
 </div>
