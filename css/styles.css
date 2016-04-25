@@ -6,13 +6,26 @@
 }
 
 main{
+	position: relative;
 	width:375px;
 	height:667px;
 	box-sizing:border-box;
 	border: 1px solid #e7e7e7;
 	margin: 1% auto;
-	background-color: #e7e7e7;
+	background-color: #fcfcfc;
 	overflow: hidden;
 	
 
+}
+
+#loading-bar .bar {
+    background: #222;
+    height: 4px;
+  }
+
+.progress{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
