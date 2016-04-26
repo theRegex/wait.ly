@@ -9,6 +9,7 @@ waiter.controller('cache', function($scope,storage){
 		storage.saveNewLocation($scope.cacheData);
 	}
 
+
 	//clear out storage data trails
 	storage.sessionBucket.clear();
 

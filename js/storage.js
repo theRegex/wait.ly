@@ -1,10 +1,10 @@
-waiter.service('storage', function($state){
+waiter.service('storage', function($state,notification){
 	var storage = this;
 
 	storage.localBucket = localStorage;
 	storage.sessionBucket = sessionStorage;
 
-	//compares old data to new data , returns boolean 
+	//compares old data to new data , returns boolean -- TAKES IN ARRAY OF OBJECTS!!
     storage.checkvalue = function(old,newData){
 		return old.some(function(index){
 			console.log(index.name);
@@ -22,26 +22,27 @@ waiter.service('storage', function($state){
 	    if (local == null) {
 	        localLocations.push(data);
 	        storage.localBucket.setItem('savedPlaces', JSON.stringify(localLocations));
-	        console.log("successfully saved first location");//to be changed to notification
+	        notification.savedLocation("Great! Added first location!");
 	    } else {
 
 	        var tempData = angular.fromJson(local);
-	        console.log("successfully grabbed data.."); //For testing only , to be removed in production
+	        
 
 	        //pass current data to be checked via checkValue()
 	        var val = storage.checkvalue(tempData, data)
 
 	        if (val == true) {
-
-	            console.log("items exists")//to be changed to notification
-	            $state.go('/search');
+	        	notification.dataConflict("Location Already Exists");
+	            
+	            //$state.go('/search');
 
 	        } else {
 
 	            tempData.push(data);
 	            localLocations = tempData;
 	            storage.localBucket.setItem('savedPlaces', JSON.stringify(localLocations));
-	            console.log("successfully save new location..:" + data.name); //to be changed to notification
+	          	notification.savedLocation("Added New Location");
+	            
 	        }
 
 
