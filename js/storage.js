@@ -1,44 +1,61 @@
-waiter.service('storage', function(){
+waiter.service('storage', function($state){
 	var storage = this;
 
 	storage.localBucket = localStorage;
 	storage.sessionBucket = sessionStorage;
 
+	//compares old data to new data , returns boolean 
+    storage.checkvalue = function(old,newData){
+		return old.some(function(index){
+			console.log(index.name);
+			return index.name == newData.name && index.city == newData.city;
+		})
+	               
+		}
 
+
+	//saveNewLocation takes in object passed from cache controller
 	storage.saveNewLocation = function(data) {
 	    var localLocations = [];
+	    var local = storage.localBucket.getItem('savedPlaces')
 
-	    if (storage.localBucket.getItem('savedPlaces') == null) {
+	    if (local == null) {
 	        localLocations.push(data);
-	        var localString = JSON.stringify(localLocations);
-	        storage.localBucket.setItem('savedPlaces', localString);
-	        console.log("successfully saved first location");
+	        storage.localBucket.setItem('savedPlaces', JSON.stringify(localLocations));
+	        console.log("successfully saved first location");//to be changed to notification
 	    } else {
-	        var dataCheck = storage.localBucket.getItem('savedPlaces');
 
-	        console.log("successfully grabbed data..");
-	        var tempData = angular.fromJson(dataCheck);
+	        var tempData = angular.fromJson(local);
+	        console.log("successfully grabbed data.."); //For testing only , to be removed in production
 
-	        for (var i = 0; i < tempData.length; i++) {
+	        //pass current data to be checked via checkValue()
+	        var val = storage.checkvalue(tempData, data)
 
-	            if (tempData[i].name == data.name && tempData[i].city == data.city) {
+	        if (val == true) {
 
-	                console.log("locations already exsists");
-	                break;
-	            } else {
-	                tempData.push(data);
-	                localLocations = tempData;
-	                storage.localBucket.setItem('savedPlaces', JSON.stringify(localLocations));
-	                console.log("successfully save new location..");
+	            console.log("items exists")//to be changed to notification
+	            $state.go('/search');
 
-	                break;
+	        } else {
 
-	            }
+	            tempData.push(data);
+	            localLocations = tempData;
+	            storage.localBucket.setItem('savedPlaces', JSON.stringify(localLocations));
+	            console.log("successfully save new location..:" + data.name); //to be changed to notification
 	        }
+
+
 	    }
 
 
 	}
+
+	
+
+	       	
+
+	       
+	
 
 
 })

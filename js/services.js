@@ -1,9 +1,12 @@
 waiter.service('foodLists', function($http, $q,$timeout,cfpLoadingBar) {
-
+//May need to change name of service....
     var foodLists = this;
+    var defer = $q.defer();
     foodLists.lists = null;
+
+    //Prototype : grabs searched for locations json via http with defer promise. 
     foodLists.processLocations = function() {
-        var defer = $q.defer();
+        
         $http.get("mock_data/places.json")
             .success(function(res) {
             
@@ -22,6 +25,10 @@ waiter.service('foodLists', function($http, $q,$timeout,cfpLoadingBar) {
         return defer.promise;
 
     }
+
+
+
+
 
     return foodLists;
 })

@@ -8,7 +8,13 @@ waiter.controller('cache', function($scope,storage){
 	$scope.save = function(){
 		storage.saveNewLocation($scope.cacheData);
 	}
-	//storage.sessionBucket.clear();
+
+	//clear out storage data trails
+	storage.sessionBucket.clear();
+
+	$scope.setWaitTime = function(time){
+
+	}
 
 
 
