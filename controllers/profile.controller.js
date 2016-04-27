@@ -1,8 +1,4 @@
-waiter.controller('profile', function($scope){
-	$scope.userCurrent = {
+waiter.controller('profile', function($scope,utilities){
 
-		name: "John Doe",
-		
-
-	}
+	$scope.currentUser = utilities.username;
 })

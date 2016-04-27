@@ -6,10 +6,14 @@
 	</ul>
 
 <input type="text" class="form-control" ng-model="search" ng-change="getFoodLocations()">
+
+
 	<ul ng-repeat="x in places">
-   <li ng-repeat="a in x.restaurants | filter:search"  ng-click="viewLocation(a)" class="list-item-1">
+   <li ng-repeat="a in x.restaurants | filter:search" class="list-item-1">
+   <div view-location  my-location="{{a}}" >
 <div class="list-name">{{a.name}}</div>
 <div class="list-city">{{a.city}}</div>
+</div>
 </li>	
 
 </ul>

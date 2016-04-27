@@ -1,16 +1,24 @@
-waiter.service('foodLists', function($http, $q,$timeout,cfpLoadingBar) {
+waiter.service('utilities', function($http, $q,cfpLoadingBar) {
 //May need to change name of service....
-    var foodLists = this;
+    var utilities = this;
     var defer = $q.defer();
-    foodLists.lists = null;
+    utilities.lists = null;
+
+    //Get user location every time service is called . This makes sure to deliver closest locations .
+    utilities.getUserLocation = function(){
+
+
+    }
+
+
 
     //Prototype : grabs searched for locations json via http with defer promise. 
-    foodLists.processLocations = function() {
+    utilities.processLocations = function(location) {
         
         $http.get("mock_data/places.json")
             .success(function(res) {
             
-                foodLists.lists = angular.fromJson(res)
+                utilities.lists = angular.fromJson(res)
                 var cResponse = angular.fromJson(res)
                 console.clear() // for testing
                 console.log("success!" + cResponse)
@@ -30,7 +38,7 @@ waiter.service('foodLists', function($http, $q,$timeout,cfpLoadingBar) {
 
 
 
-    return foodLists;
+    return utilities;
 })
 
 

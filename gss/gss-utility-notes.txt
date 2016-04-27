@@ -1,4 +1,0 @@
-	<link rel="stylesheet/gss" type="text/gss" href="gss/layout.gss"></link>
-
-	<script type="text/javascript" src="gss/gss.min.js"></script>
-	
