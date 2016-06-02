@@ -3,7 +3,7 @@ waiter.service('utilities', function($http, $q,cfpLoadingBar) {
     var utilities = this;
     var defer = $q.defer();
     utilities.lists = null;
-
+    utilities.username = "John Doe";
     //Get user location every time service is called . This makes sure to deliver closest locations .
     utilities.getUserLocation = function(){
 
